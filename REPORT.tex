@@ -106,7 +106,18 @@ to the full-coverage KMeans result.}
 
 KMeans on cleaned LSA is the best practical configuration. HDBSCAN identifies
 small dense groups, but it marks most papers as outliers. Direct TF-IDF
-clustering is much weaker by all internal metrics.
+clustering is much weaker by all internal metrics. The KMeans elbow curve in
+Figure~\ref{fig:elbow} decreases gradually, so the selected number of clusters
+should be interpreted as a practical topic granularity rather than a sharply
+identified natural cluster count.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{output/kmeans_lsa_elbow.png}
+    \caption{KMeans elbow scan on the cleaned LSA representation. The curve is
+    fairly gradual, which is expected for overlapping research topics.}
+    \label{fig:elbow}
+\end{figure}
 
 \begin{table}[H]
 \centering\small
