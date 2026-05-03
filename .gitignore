@@ -78,6 +78,14 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# LaTeX build artifacts
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
 # Project data/cache
 data/
 *.npy

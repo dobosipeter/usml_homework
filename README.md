@@ -4,16 +4,16 @@ This repository contains my submission for my Unsupervised Machine Learning cour
 
 ## Project: arXiv topic clustering
 
-An embedding-based topic-modeling pipeline over recent arXiv papers
+An unsupervised topic-modeling pipeline over recent arXiv papers
 (`cs.LG` + `cs.CL`, last 12 months) that doubles as a small research
 tool: discover topics without supervision, see how they evolve over time,
 and surface similar papers given a query abstract.
 
 The **clustering** task is the dominant element (KMeans, Ward
-agglomerative, and HDBSCAN compared on the same embeddings, with
-Silhouette / Davies-Bouldin / Calinski-Harabasz scores). A small
-content-based recommender (cosine similarity in the embedding space) is
-included as a secondary touch.
+agglomerative, and HDBSCAN compared on cleaned TF-IDF and dense LSA
+representations, with Silhouette / Davies-Bouldin / Calinski-Harabasz
+scores). A small content-based recommender (cosine similarity in the LSA
+space) is included as a secondary touch.
 
 ## Contents
 
@@ -39,13 +39,6 @@ python -m pip install --upgrade pip
 pip install -e .
 ```
 
-Optional, for LLM-generated topic labels:
-
-```bash
-export OPENAI_API_KEY=sk-...   # primary path
-# fallback: the cursor-agent CLI installed on PATH as `agent`
-```
-
 ## Run
 
 Open the notebook and run all cells:
@@ -54,9 +47,9 @@ Open the notebook and run all cells:
 jupyter lab arxiv_topics.ipynb
 ```
 
-The first run fetches ~3-5k papers via the live arXiv API and computes
-SPECTER embeddings; both are cached under `data/`, so subsequent runs are
-cheap.
+The first run fetches a balanced sample of recent papers via the live arXiv
+API and computes cleaned TF-IDF / LSA representations; both are cached under
+`data/`, so subsequent runs are cheap.
 
 Build the PDF report:
 
