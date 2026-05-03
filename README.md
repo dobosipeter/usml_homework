@@ -2,6 +2,8 @@
 
 This repository contains my submission for my Unsupervised Machine Learning course (`VEMISAM255N/2025/26/2`, [Moodle course page](https://moodle.uni-pannon.hu/course/view.php?id=29943)).
 
+Repository URL: <https://github.com/dobosipeter/usml_homework>
+
 ## Project: arXiv topic clustering
 
 An unsupervised topic-modeling pipeline over recent arXiv papers
